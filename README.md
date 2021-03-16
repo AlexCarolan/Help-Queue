@@ -1,4 +1,6 @@
-# Inventory Management System
+# Help Queue
+
+
 
 ## Project Outline
 
