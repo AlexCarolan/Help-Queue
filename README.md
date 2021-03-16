@@ -22,6 +22,7 @@ In addition to this the project uses the following dependencies
 * [Mockito](https://site.mockito.org/) - Integration Testing
 * [Log4J](https://logging.apache.org/log4j/2.x/) - Logging
 * https://spring.io/projects/spring-data
+* spring web
 
 ## Installation and Running
 
