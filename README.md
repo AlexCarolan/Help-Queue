@@ -21,6 +21,7 @@ In addition to this the project uses the following dependencies
 * [JUnit4](https://junit.org/junit4/) - Unit Testing
 * [Mockito](https://site.mockito.org/) - Integration Testing
 * [Log4J](https://logging.apache.org/log4j/2.x/) - Logging
+* https://spring.io/projects/spring-data
 
 ## Installation and Running
 
