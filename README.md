@@ -34,6 +34,10 @@ Next start MySQL in a local command line and create the ims database using the c
 
 ## Testing
 
+## System Lifecycle
+![Lifecycle](images/lifecycle.png)
+
 ## Database Structure
 ![Database](images/database.png)
+
 
