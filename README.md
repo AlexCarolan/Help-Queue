@@ -33,3 +33,7 @@ Before running the program your MySQL credentials should be entered into the db.
 Next start MySQL in a local command line and create the ims database using the command "CREATE DATABASE ims;"
 
 ## Testing
+
+## Database Structure
+![Database](images/database.png)
+
