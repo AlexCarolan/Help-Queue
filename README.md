@@ -40,4 +40,7 @@ Next start MySQL in a local command line and create the ims database using the c
 ## Database Structure
 ![Database](images/database.png)
 
+## Database Structure
+![Risk Assesment](images/risk_assesment.png)
+
 
