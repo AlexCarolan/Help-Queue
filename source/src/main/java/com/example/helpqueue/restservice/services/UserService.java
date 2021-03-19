@@ -1,4 +1,4 @@
-package com.example.helpqueue.services;
+package com.example.helpqueue.restservice.services;
 
 import com.example.helpqueue.restservice.repositories.UserRepository;
 import com.example.helpqueue.restservice.resources.User;
