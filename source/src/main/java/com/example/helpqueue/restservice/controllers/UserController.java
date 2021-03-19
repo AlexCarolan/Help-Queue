@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @RestController
@@ -28,9 +27,9 @@ public class UserController {
     @GetMapping("/users/{id}")
     ResponseEntity<User> getById(@PathVariable Long id) {
         Optional<User> user = this.service.findById(id);
-        try {
+        if (user.isPresent()) {
             return ResponseEntity.ok(user.get());
-        } catch (NoSuchElementException e) {
+        } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
 
