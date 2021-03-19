@@ -39,4 +39,10 @@ public class UserController {
         return this.service.updateUser(newUser, id);
     }
 
+    @DeleteMapping("/users/{id}")
+    void deleteEmployee(@PathVariable Long id) {
+
+        this.service.deleteById(id);
+    }
+
 }

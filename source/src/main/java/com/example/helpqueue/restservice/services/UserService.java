@@ -3,12 +3,10 @@ package com.example.helpqueue.restservice.services;
 import com.example.helpqueue.restservice.repositories.UserRepository;
 import com.example.helpqueue.restservice.resources.User;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Service
@@ -31,7 +29,6 @@ public class UserService {
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
-
     }
 
     public List<User> findAll() {
@@ -50,6 +47,13 @@ public class UserService {
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
+    }
 
+    public void deleteById(Long id) {
+        if (this.repository.findById(id).isPresent()) {
+            this.repository.deleteById(id);
+        } else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
     }
 }
