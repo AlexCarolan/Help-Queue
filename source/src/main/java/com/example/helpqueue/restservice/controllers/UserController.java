@@ -26,18 +26,17 @@ public class UserController {
 
     @GetMapping("/users/{id}")
     ResponseEntity<User> getById(@PathVariable Long id) {
-        Optional<User> user = this.service.findById(id);
-        if (user.isPresent()) {
-            return ResponseEntity.ok(user.get());
-        } else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-        }
-
+        return ResponseEntity.ok(this.service.findById(id));
     }
 
     @GetMapping("/users/all")
     List<User> getAll() {
         return this.service.findAll();
+    }
+
+    @PutMapping("/users/{id}")
+    User updateUser(@RequestBody User newUser, @PathVariable Long id) {
+        return this.service.updateUser(newUser, id);
     }
 
 }
