@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
@@ -34,4 +35,10 @@ public class UserController {
         }
 
     }
+
+    @GetMapping("/users/all")
+    List<User> getAll() {
+        return this.service.findAll();
+    }
+
 }
