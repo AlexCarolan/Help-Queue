@@ -9,28 +9,37 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private final long id;
+    private long id;
     @NotBlank
-    private final boolean admin;
+    private boolean admin;
     @NotBlank
-    private final String name;
+    private String name;
 
-    public User(long id, boolean admin, String name) {
+    public User() {
         super();
-        this.id = id;
-        this.admin = admin;
-        this.name = name;
     }
 
     public long getId() {
         return id;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public boolean isAdmin() {
         return admin;
     }
 
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
