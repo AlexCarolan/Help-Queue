@@ -5,10 +5,8 @@ import com.example.helpqueue.restservice.services.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 public class UserController {
@@ -40,7 +38,7 @@ public class UserController {
     }
 
     @DeleteMapping("/users/{id}")
-    void deleteEmployee(@PathVariable Long id) {
+    void deleteUser(@PathVariable Long id) {
 
         this.service.deleteById(id);
     }
