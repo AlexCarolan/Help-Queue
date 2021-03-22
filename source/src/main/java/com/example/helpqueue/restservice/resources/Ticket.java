@@ -1,19 +1,22 @@
 package com.example.helpqueue.restservice.resources;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 @Entity
 @Table(name = "Tickets")
-public class Ticket {
+public class Ticket implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @NotBlank
-    private String name;
+    private String title;
     @ManyToOne
-    @JoinColumn(name="creator_id", referencedColumnName = "id", insertable = false, updatable = false)
+    @JoinColumn(name="creator_id", nullable=false)
     private User creator;
     @NotBlank
     private String description;
@@ -25,6 +28,11 @@ public class Ticket {
         super();
     }
 
+    public Ticket(Long id) {
+        super();
+        this.id = id;
+    }
+
 
     public long getId() {
         return id;
@@ -34,12 +42,12 @@ public class Ticket {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public User getCreator() {
