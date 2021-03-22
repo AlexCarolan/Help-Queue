@@ -23,11 +23,11 @@ public class TicketController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-//    @GetMapping("/tickets/{id}")
-//    ResponseEntity<Ticket> getById(@PathVariable Long id) {
-//        return ResponseEntity.ok(this.service.findById(id));
-//    }
-//
+    @GetMapping("/tickets/{id}")
+    ResponseEntity<Ticket> getById(@PathVariable Long id) {
+        return ResponseEntity.ok(this.service.findById(id));
+    }
+
     @GetMapping("/tickets/all")
     List<Ticket> getAll() {
         return this.service.findAll();

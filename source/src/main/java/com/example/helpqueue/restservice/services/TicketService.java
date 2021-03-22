@@ -3,11 +3,13 @@ package com.example.helpqueue.restservice.services;
 import com.example.helpqueue.restservice.repositories.TicketRepository;
 import com.example.helpqueue.restservice.repositories.UserRepository;
 import com.example.helpqueue.restservice.resources.Ticket;
+import com.example.helpqueue.restservice.resources.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TicketService {
@@ -28,9 +30,15 @@ public class TicketService {
         }
     }
 
-//    public Object findById(Long id) {
-//    }
-//
+    public Ticket findById(Long id) {
+        Optional<Ticket> ticket = this.repository.findById(id);
+        if (ticket.isPresent()) {
+            return ticket.get();
+        } else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+    }
+
     public List<Ticket> findAll() {
         return this.repository.findAll();
     }
