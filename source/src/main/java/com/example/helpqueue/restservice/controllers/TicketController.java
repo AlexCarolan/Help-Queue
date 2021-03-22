@@ -32,14 +32,14 @@ public class TicketController {
     List<Ticket> getAll() {
         return this.service.findAll();
     }
-//
-//    @PutMapping("/tickets/{id}")
-//    Ticket updateTicket(@RequestBody Ticket newTicket, @PathVariable Long id) {
-//        return this.service.updateTicket(newTicket, id);
-//    }
-//
-//    @DeleteMapping("/tickets/{id}")
-//    void deleteTicket(@PathVariable Long id) {
-//        this.service.deleteById(id);
-//    }
+
+    @PutMapping("/tickets/{id}")
+    Ticket updateTicket(@RequestBody Ticket newTicket, @PathVariable Long id) {
+        return this.service.updateTicket(newTicket, id);
+    }
+
+    @DeleteMapping("/tickets/{id}")
+    void deleteTicket(@PathVariable Long id) {
+        this.service.deleteById(id);
+    }
 }

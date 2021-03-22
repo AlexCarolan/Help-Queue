@@ -42,10 +42,33 @@ public class TicketService {
     public List<Ticket> findAll() {
         return this.repository.findAll();
     }
-//
-//    public Ticket updateTicket(Ticket newTicket, Long id) {
-//    }
-//
-//    public void deleteById(Long id) {
-//    }
+
+    public Ticket updateTicket(Ticket newTicket, Long id) {
+
+        if (!this.userRepository.findById(newTicket.getCreator().getId()).isPresent()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+
+        Optional<Ticket> response = repository.findById(id)
+                .map(ticket -> {
+                    ticket.setCreated(newTicket.getCreated());
+                    ticket.setCreator(newTicket.getCreator());
+                    ticket.setTitle(newTicket.getTitle());
+                    ticket.setDescription(newTicket.getDescription());
+                    return repository.save(ticket);
+                });
+        if (response.isPresent()) {
+            return response.get();
+        } else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    public void deleteById(Long id) {
+        if (this.repository.findById(id).isPresent()) {
+            this.repository.deleteById(id);
+        } else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+    }
 }
