@@ -72,10 +72,35 @@ class UserControllerTest {
     }
 
     @Test
-    void updateUser() {
+    void updateUser() throws Exception {
+        User user = new User();
+        user.setAdmin(true);
+        user.setName("Steve");
+
+        ObjectMapper mapper = new ObjectMapper();
+        String json = mapper.writeValueAsString(user);
+
+        RequestBuilder request = MockMvcRequestBuilders.put("/users/2").contentType(MediaType.APPLICATION_JSON).content(json);
+        mockMvc.perform(request)
+                .andExpect(status().isOk());
+
+        request = MockMvcRequestBuilders.get("/users/2");
+        mockMvc.perform(request)
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id", Matchers.is(2)))
+                .andExpect(jsonPath("$.name", Matchers.is("Steve")))
+                .andExpect(jsonPath("$.admin", Matchers.is(true)));
+
     }
 
     @Test
-    void deleteUser() {
+    void deleteUser() throws Exception {
+        RequestBuilder request = MockMvcRequestBuilders.delete("/users/99");
+        mockMvc.perform(request)
+                .andExpect(status().isNotFound());
+
+        request = MockMvcRequestBuilders.delete("/users/1");
+        mockMvc.perform(request)
+                .andExpect(status().isOk());
     }
 }
