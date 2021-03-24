@@ -3,11 +3,14 @@ package com.example.helpqueue.restservice.controllers;
 import com.example.helpqueue.restservice.resources.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.hamcrest.Matchers;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.http.MediaType;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -17,13 +20,32 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ComponentScan(basePackages = {"com.example.helpqueue.*"})
 @SpringBootTest
 @AutoConfigureMockMvc
+@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 class UserControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
 
     @Test
-    void create() {
+    void create() throws Exception {
+
+        User user = new User();
+        user.setAdmin(false);
+        user.setName("John");
+
+        ObjectMapper mapper = new ObjectMapper();
+        String json = mapper.writeValueAsString(user);
+
+        RequestBuilder request = MockMvcRequestBuilders.post("/users/create").contentType(MediaType.APPLICATION_JSON).content(json);
+        mockMvc.perform(request)
+                .andExpect(status().isCreated());
+
+        request = MockMvcRequestBuilders.get("/users/3");
+        mockMvc.perform(request)
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id", Matchers.is(3)))
+                .andExpect(jsonPath("$.name", Matchers.is("John")))
+                .andExpect(jsonPath("$.admin", Matchers.is(false)));
     }
 
     @Test
@@ -38,19 +60,15 @@ class UserControllerTest {
 
     @Test
     void getAll() throws Exception {
-//        RequestBuilder request = MockMvcRequestBuilders.get("/users/");
-//        MvcResult result = mockMvc.perform(request)
-//                .andExpect(status().isOk())
-//                .andReturn();
-//
-//        String json = result.getResponse().getContentAsString();
-//        User[] user = new ObjectMapper().readValue(json, User[].class);
-//
-//        System.out.println(json + "\n\n\n here \n\n\n");
-//
-//        assertEquals(user[0].getId(), 1);
-//        assertEquals(user[0].getName(), "Bill");
-//        assertTrue(user[0].isAdmin());
+        RequestBuilder request = MockMvcRequestBuilders.get("/users/all");
+        mockMvc.perform(request)
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[0].id", Matchers.is(1)))
+                .andExpect(jsonPath("$[0].name", Matchers.is("Bill")))
+                .andExpect(jsonPath("$[0].admin", Matchers.is(true)))
+                .andExpect(jsonPath("$[1].id", Matchers.is(2)))
+                .andExpect(jsonPath("$[1].name", Matchers.is("Alex")))
+                .andExpect(jsonPath("$[1].admin", Matchers.is(false)));
     }
 
     @Test
