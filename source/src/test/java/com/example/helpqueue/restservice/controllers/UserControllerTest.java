@@ -3,7 +3,6 @@ package com.example.helpqueue.restservice.controllers;
 import com.example.helpqueue.restservice.resources.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.hamcrest.Matchers;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -98,6 +97,10 @@ class UserControllerTest {
         RequestBuilder request = MockMvcRequestBuilders.delete("/users/99");
         mockMvc.perform(request)
                 .andExpect(status().isNotFound());
+
+        request = MockMvcRequestBuilders.delete("/tickets/1");
+        mockMvc.perform(request)
+                .andExpect(status().isOk());
 
         request = MockMvcRequestBuilders.delete("/users/1");
         mockMvc.perform(request)
