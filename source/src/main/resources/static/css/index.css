@@ -1,5 +1,5 @@
 .header {
-  background-color: #3260a8;
+  background-color: #0d6efd;
   padding: 10px 0px 10px 0px;
 }
 
@@ -22,7 +22,7 @@
 
 .checkinput{
   margin:0 auto;
-  padding: 20px;
+  padding-top: 20px;
   display:block;
 }
 
@@ -34,3 +34,4 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
