@@ -1,0 +1,47 @@
+.header {
+  background-color: #0d6efd;
+  padding: 20px 0px 20px 0px;
+  display: flex;
+}
+
+.header h1 {
+  color: white;
+  margin: 0px 0px 0px 25px;
+  font-family: Arial;
+  display: inline-block;
+}
+
+.logout {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: 25px;
+  align-items: flex-start;
+}
+
+.logout .btn {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  min-width: 100px;
+}
+
+.logout .btn {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  min-width: 100px;
+}
+
+.logout .btn:hover {
+  background-color: #ededed;
+  border-color: #ededed;
+}
+
+.left-offset{
+  margin-left: 25px;
+}
+
+.top-offset {
+  margin-top: 20px;
+}
+
