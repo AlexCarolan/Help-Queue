@@ -16,8 +16,10 @@ function login() {
         if(Http.readyState == 4) {
             if (Http.status != 200) {
                 alert("ERROR: User not found");
+            } else {
+                localStorage.setItem("UserID", id);
+                window.location.href = "queue.html";
             }
-          console.log(Http.responseText)
         }
     }
 
