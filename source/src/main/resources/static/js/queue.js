@@ -17,7 +17,7 @@ function populate() {
                 alert("ERROR: User not found");
             } else {
                 var response = JSON.parse(Http.response);
-                var element = document.getElementById("user_tag");
+                var element = document.getElementById("user-tag");
                 element.innerHTML = "User - " + response.name;
 
                 if (response.admin) {
