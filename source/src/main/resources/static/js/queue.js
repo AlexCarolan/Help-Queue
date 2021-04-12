@@ -112,6 +112,7 @@ function ticketBuilder(ticket, user) {
             ticketClose.classList.add("btn-warning");
             ticketClose.classList.add("ticket-button");
             ticketClose.appendChild(document.createTextNode("Close"));
+            ticketClose.addEventListener("click", function(){closeTicket(ticket.id)});
             ticketHolder.appendChild(ticketClose);
         }
 
@@ -149,19 +150,68 @@ function iso8601ToJsDate(iso8601){
 }
 
 function deleteTicket(id) {
-        const Http = new XMLHttpRequest();
-        const url='http://localhost:8080/tickets/' + id;
-        Http.open("DELETE", url);
-        Http.send();
+    const Http = new XMLHttpRequest();
+    const url='http://localhost:8080/tickets/' + id;
+    Http.open("DELETE", url);
+    Http.send();
 
-        Http.onreadystatechange = function() {
-            if(Http.readyState == 4) {
-                if (Http.status != 200) {
-                    alert("ERROR: Ticket not found");
-                } else {
-                    alert("Ticket deleted");
-                    location.reload();
-                }
+    Http.onreadystatechange = function() {
+        if(Http.readyState == 4) {
+            if (Http.status != 200) {
+                alert("ERROR: Ticket not found");
+            } else {
+                alert("Ticket deleted");
+                location.reload();
             }
         }
+    }
+}
+
+function closeTicket(id) {
+    const Http = new XMLHttpRequest();
+    const url='http://localhost:8080/tickets/' + id;
+    Http.open("GET", url);
+    Http.send();
+
+    var element = document.getElementById("ticket-queue");
+
+    Http.onreadystatechange = function() {
+        if(Http.readyState == 4) {
+            if (Http.status == 200) {
+                 sendCloseRequest(id, JSON.parse(Http.response));
+            } else {
+                alert("ERROR: Issue closing ticket");
+            }
+        }
+    }
+}
+
+function sendCloseRequest(id, oldTicket) {
+
+    var creator = {};
+    creator['id'] = oldTicket.creator.id;
+
+    var body = {};
+    body['title'] = oldTicket.title;
+    body['creator'] = creator;
+    body['description'] = oldTicket.description;
+    body['created'] = oldTicket.created;
+    body['status'] = "CLOSED";
+
+    const Http = new XMLHttpRequest();
+    const url='http://localhost:8080/tickets/' + id;
+    Http.open("PUT", url, true);
+    Http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    Http.send(JSON.stringify(body));
+
+    Http.onreadystatechange = function() {
+        if(Http.readyState == 4) {
+            if (Http.status == 200) {
+                alert("Ticket closed");
+                location.reload();
+            } else {
+                alert("ERROR: Unable to create user");
+            }
+        }
+    }
 }
