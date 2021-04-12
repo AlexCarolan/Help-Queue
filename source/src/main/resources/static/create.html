@@ -9,10 +9,10 @@
 </head>
 <body>
 
-<script type='text/javascript' async=false defer=false src='js/queue.js'></script>
+<script type='text/javascript' async=false defer=false src='js/create.js'></script>
 
 <div class="header">
-    <h1>Help Queue - Tickets</h1>
+    <h1>Help Queue - Create Ticket</h1>
     <div class="logout">
         <button type="button" class="btn btn-light" onclick="logout()">Logout</button>
     </div>
@@ -22,10 +22,12 @@
     <h3 id="user-tag">User - name</h3>
 </div>
 
-<button type="button" class="btn btn-primary create-button" onclick="navigateCreate()">Create Ticket</button>
+<button type="button" class="btn btn-primary create-button">Create Ticket</button>
 
-<div class="top-offset" id="ticket-queue">
-    <!-- Populated by JS on load-->
+<div class="top-offset">
+    <div class="ticket-holder">
+
+    </div>
 </div>
 
 <div class="top-offset"><!--Bottom spacer--></div>

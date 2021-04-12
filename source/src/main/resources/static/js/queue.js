@@ -215,3 +215,7 @@ function sendCloseRequest(id, oldTicket) {
         }
     }
 }
+
+function navigateCreate() {
+    window.location.href = "create.html";
+}
