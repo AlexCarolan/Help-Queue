@@ -128,6 +128,7 @@ function ticketBuilder(ticket, user) {
             ticketDelete.classList.add("btn-danger");
             ticketDelete.classList.add("ticket-button");
             ticketDelete.appendChild(document.createTextNode("Delete"));
+            ticketDelete.addEventListener("click", function(){deleteTicket(ticket.id)});
             ticketHolder.appendChild(ticketDelete);
         }
     }
@@ -145,4 +146,22 @@ function iso8601ToJsDate(iso8601){
     var ms = Date.parse(iso8601)
     var dateTime = new Date(ms);
     return dateTime.toLocaleString('en-GB', { timeZone: 'UTC' });
+}
+
+function deleteTicket(id) {
+        const Http = new XMLHttpRequest();
+        const url='http://localhost:8080/tickets/' + id;
+        Http.open("DELETE", url);
+        Http.send();
+
+        Http.onreadystatechange = function() {
+            if(Http.readyState == 4) {
+                if (Http.status != 200) {
+                    alert("ERROR: Ticket not found");
+                } else {
+                    alert("Ticket deleted");
+                    location.reload();
+                }
+            }
+        }
 }
