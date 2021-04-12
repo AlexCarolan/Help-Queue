@@ -98,3 +98,10 @@
     border-radius: .25rem;
 }
 
+.create-button {
+    margin: 0 auto;
+    display: block;
+    min-width: 50%;
+    font-size: 20px;
+}
+
