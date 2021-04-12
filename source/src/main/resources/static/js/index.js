@@ -45,8 +45,7 @@ function create() {
             if (Http.status == 201) {
                 alert("OK: User created");
             } else {
-                //alert("ERROR: Unable to create user");
-                alert(http.responseText);
+                alert("ERROR: Unable to create user");
             }
         }
     }
