@@ -75,6 +75,14 @@
     min-width: 100px
 }
 
+.ticket-closed {
+    margin: 15px 0px 15px 20px;
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    min-width: 100px
+}
+
 .tag {
     display: inline-block;
     font-weight: 400;
