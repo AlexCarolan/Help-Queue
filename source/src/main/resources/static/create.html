@@ -14,6 +14,7 @@
 <div class="header">
     <h1>Help Queue - Create Ticket</h1>
     <div class="logout">
+        <button type="button" class="btn btn-light" id="returnButton" onclick="returnQueue()">Return</button>
         <button type="button" class="btn btn-light" onclick="logout()">Logout</button>
     </div>
 </div>
@@ -22,13 +23,26 @@
     <h3 id="user-tag">User - name</h3>
 </div>
 
-<button type="button" class="btn btn-primary create-button">Create Ticket</button>
-
 <div class="top-offset">
     <div class="ticket-holder">
-
+        <form class="input">
+            <label for="title" class="form-label"><h4 class="ticket-offset">Title</h4></label>
+            <div class="form-box">
+                <input type="text" class="form-control" id="title">
+            </div>
+            <label for="description" class="form-label"><h4 class="ticket-offset">Description</h4></label>
+            <div class="form-box">
+                <textarea name="message" rows="10" cols="30" type="text" class="form-control" id="description"></textarea>
+            </div>
+            <div class="top-offset"><!--Bottom spacer--></div>
+        </form>
     </div>
+
 </div>
+
+<div class="top-offset"><!--Button spacer--></div>
+
+<button type="button" class="btn btn-primary create-button">Create Ticket</button>
 
 <div class="top-offset"><!--Bottom spacer--></div>
 

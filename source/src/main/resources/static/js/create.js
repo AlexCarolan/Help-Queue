@@ -33,3 +33,7 @@ function logout() {
     localStorage.setItem("UserID", 0);
     window.location.href = "index.html";
 }
+
+function returnQueue() {
+    window.location.href = "queue.html";
+}
