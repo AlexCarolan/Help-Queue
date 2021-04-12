@@ -40,6 +40,7 @@ class TicketControllerTest {
         ticket.setTitle("Test");
         ticket.setDescription("Test description");
         ticket.setCreated(timestamp);
+        ticket.setStatus("OPEN");
 
         ObjectMapper mapper = new ObjectMapper();
         String json = mapper.writeValueAsString(ticket);
@@ -55,6 +56,7 @@ class TicketControllerTest {
                 .andExpect(jsonPath("$.title", Matchers.is("Test")))
                 .andExpect(jsonPath("$.description", Matchers.is("Test description")))
                 .andExpect(jsonPath("$.creator.id", Matchers.is(1)))
+                .andExpect(jsonPath("$.status", Matchers.is("OPEN")))
                 .andExpect(jsonPath("$.created", Matchers.is("2001-09-09T01:46:40.000+00:00")));
     }
 
@@ -67,6 +69,7 @@ class TicketControllerTest {
                 .andExpect(jsonPath("$.title", Matchers.is("Email")))
                 .andExpect(jsonPath("$.description", Matchers.is("Email broken")))
                 .andExpect(jsonPath("$.creator.id", Matchers.is(1)))
+                .andExpect(jsonPath("$.status", Matchers.is("OPEN")))
                 .andExpect(jsonPath("$.created", Matchers.is("2015-11-05T14:29:36.000+00:00")));
     }
 
@@ -79,11 +82,13 @@ class TicketControllerTest {
                 .andExpect(jsonPath("$[0].title", Matchers.is("Email")))
                 .andExpect(jsonPath("$[0].description", Matchers.is("Email broken")))
                 .andExpect(jsonPath("$[0].creator.id", Matchers.is(1)))
+                .andExpect(jsonPath("$[0].status", Matchers.is("OPEN")))
                 .andExpect(jsonPath("$[0].created", Matchers.is("2015-11-05T14:29:36.000+00:00")))
                 .andExpect(jsonPath("$[1].id", Matchers.is(2)))
                 .andExpect(jsonPath("$[1].title", Matchers.is("Login")))
                 .andExpect(jsonPath("$[1].description", Matchers.is("Unable to login")))
                 .andExpect(jsonPath("$[1].creator.id", Matchers.is(2)))
+                .andExpect(jsonPath("$[1].status", Matchers.is("CLOSED")))
                 .andExpect(jsonPath("$[1].created", Matchers.is("2020-05-06T11:00:00.000+00:00")));
     }
 
@@ -98,6 +103,7 @@ class TicketControllerTest {
         ticket.setCreator(user);
         ticket.setTitle("Updated");
         ticket.setDescription("Updated description");
+        ticket.setStatus("CLOSED");
         ticket.setCreated(timestamp);
 
         ObjectMapper mapper = new ObjectMapper();
