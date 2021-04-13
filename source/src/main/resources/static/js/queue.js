@@ -19,10 +19,10 @@ function populate() {
                 //Response received
                 var response = JSON.parse(Http.response);
                 var element = document.getElementById("user-tag");
-                element.innerHTML = "User - " + response.name;
+                element.innerHTML = "User - " + response.name.charAt(0).toUpperCase() + response.name.slice(1);
 
                 if (response.admin) {
-                    element.innerHTML = "User - " + response.name + " (Admin)";
+                    element.innerHTML = "User - " + response.name.charAt(0).toUpperCase() + response.name.slice(1) + " (Admin)";
                 }
 
                 addTickets(response);
@@ -210,7 +210,7 @@ function sendCloseRequest(id, oldTicket) {
                 alert("Ticket closed");
                 location.reload();
             } else {
-                alert("ERROR: Unable to create user");
+                alert("ERROR: Unable to update ticket");
             }
         }
     }
