@@ -9,10 +9,10 @@
 </head>
 <body>
 
-<script type='text/javascript' async=false defer=false src='js/create.js'></script>
+<script type='text/javascript' async=false defer=false src='js/update.js'></script>
 
 <div class="header">
-    <h1>Help Queue - Create Ticket</h1>
+    <h1>Help Queue - Update Ticket</h1>
     <div class="logout">
         <button type="button" class="btn btn-light" id="returnButton" onclick="returnQueue()">Return</button>
         <button type="button" class="btn btn-light" onclick="logout()">Logout</button>
@@ -32,7 +32,7 @@
             </div>
             <h4 class="ticket-offset"><label for="description" class="form-label">Description</label></h4>
             <div class="form-box">
-                <textarea name="message" rows="10" cols="30" type="text" class="form-control" id="description"></textarea>
+                <textarea name="message" rows="10" cols="30" class="form-control" id="description"></textarea>
             </div>
             <div class="top-offset"><!--Bottom spacer--></div>
         </form>
@@ -41,7 +41,7 @@
 </div>
 
 <div class="top-offset"><!--Button spacer--></div>
-    <button type="button" class="btn btn-primary create-button" onclick="createTicket()">Create Ticket</button>
+<button type="button" class="btn btn-primary create-button" onclick="updateTicket()">Update Ticket</button>
 <div class="top-offset"><!--Bottom spacer--></div>
 <div class="top-offset"><!--Bottom spacer--></div>
 

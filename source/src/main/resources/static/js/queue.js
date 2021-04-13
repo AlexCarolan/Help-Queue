@@ -44,6 +44,7 @@ function addTickets(user) {
         if(Http.readyState == 4) {
             if (Http.status == 200) {
                 var response = JSON.parse(Http.response);
+                response = response.reverse();
                 for(var i = 0; i < response.length; i++) {
                     var ticket = response[i];
                     element.appendChild(ticketBuilder(ticket, user));
@@ -105,6 +106,7 @@ function ticketBuilder(ticket, user) {
             ticketUpdate.classList.add("btn-primary");
             ticketUpdate.classList.add("ticket-button");
             ticketUpdate.appendChild(document.createTextNode("Update"));
+            ticketUpdate.addEventListener("click", function(){updateTicket(ticket.id)});
             ticketHolder.appendChild(ticketUpdate);
 
             var ticketClose = document.createElement("button");
@@ -184,6 +186,11 @@ function closeTicket(id) {
             }
         }
     }
+}
+
+function updateTicket(id) {
+    localStorage.setItem("TicketID", id);
+    window.location.href = "update.html";
 }
 
 function sendCloseRequest(id, oldTicket) {
