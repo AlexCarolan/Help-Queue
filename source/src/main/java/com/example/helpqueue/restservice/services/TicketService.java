@@ -45,7 +45,7 @@ public class TicketService {
 
     public Ticket updateTicket(Ticket newTicket, Long id) {
 
-        if (!this.userRepository.findById(newTicket.getCreator().getId()).isPresent()) {
+        if (this.userRepository.findById(newTicket.getCreator().getId()).isEmpty()) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
 
@@ -55,6 +55,7 @@ public class TicketService {
                     ticket.setCreator(newTicket.getCreator());
                     ticket.setTitle(newTicket.getTitle());
                     ticket.setDescription(newTicket.getDescription());
+                    ticket.setStatus(newTicket.getStatus());
                     return repository.save(ticket);
                 });
         if (response.isPresent()) {

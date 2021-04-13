@@ -23,6 +23,8 @@ public class Ticket implements Serializable {
     @Basic
     @NotBlank
     private java.sql.Timestamp created;
+    @NotBlank
+    private String status;
 
     public Ticket() {
         super();
@@ -72,5 +74,13 @@ public class Ticket implements Serializable {
 
     public void setCreated(Timestamp created) {
         this.created = created;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

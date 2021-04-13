@@ -1,0 +1,120 @@
+.header {
+  background-color: #0d6efd;
+  padding: 20px 0px 20px 0px;
+  display: flex;
+}
+
+.header h1 {
+  color: white;
+  margin: 0px 0px 0px 25px;
+  font-family: Arial;
+  display: inline-block;
+}
+
+.logout {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: 25px;
+  align-items: flex-start;
+}
+
+.logout .btn {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  min-width: 100px;
+}
+
+.logout .btn {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  min-width: 100px;
+}
+
+.logout .btn:hover {
+  background-color: #ededed;
+  border-color: #ededed;
+}
+
+.left-offset{
+  margin-left: 25px;
+}
+
+.top-offset {
+  margin-top: 20px;
+}
+
+.large-top-offset {
+  margin-top: 40px;
+}
+
+.ticket-holder {
+  margin-left: auto;
+  margin-top: 30px;
+  margin-right: auto;
+  width: 65%;
+  background-color: #F4F5F6;
+  border: 3px solid #DEDFE0;
+  border-radius: 10px;
+}
+
+.ticket-offset {
+    margin: 12px 0px 0px 20px;
+}
+
+.ticket-subtext {
+    margin: 5px 0px 0px 20px;
+}
+
+.ticket-button {
+    margin: 15px 0px 15px 20px;
+    min-width: 100px
+}
+
+.ticket-open {
+    margin: 15px 0px 15px 20px;
+    background-color: #28a745;
+    color: white;
+    min-width: 100px
+}
+
+.ticket-closed {
+    margin: 15px 0px 15px 20px;
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    min-width: 100px
+}
+
+.tag {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+}
+
+.create-button {
+    margin: 0 auto;
+    display: block;
+    min-width: 50%;
+    font-size: 20px;
+}
+
+.form-box {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#returnButton{
+    margin-right: 20px;
+}
+

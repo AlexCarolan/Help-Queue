@@ -1,12 +1,14 @@
 .header {
   background-color: #0d6efd;
-  padding: 10px 0px 10px 0px;
+  padding: 20px 0px 20px 0px;
+  display: flex;
 }
 
 .header h1 {
   color: white;
-  margin-left: 25px;
-  font-family: Arial
+  margin: 0px 0px 0px 25px;
+  font-family: Arial;
+  display: inline-block;
 }
 
 .input {
@@ -34,4 +36,5 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
 
