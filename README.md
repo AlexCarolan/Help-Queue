@@ -9,7 +9,9 @@ This repository contains both the front and back-end code of a program that prov
 ## JIRA Board
 
 The project managment board can be found at:
+
 https://id.atlassian.com/invite/p/jira-software?id=Jx0Zd3ecSHa_F1vp4H6L4w
+
 (Link may have expired)
 
 ## Requirements
