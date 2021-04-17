@@ -23,17 +23,15 @@ In addition to this the project uses the following dependencies
 Back-end
 * [H2](https://h2database.com) - Embedded DBMS for testing
 * [JDBC](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/) - Database Management via Java
+* [Spring](https://spring.io/) - API and Database Management
 * [JUnit4](https://junit.org/junit4/) - Unit Testing
-* [Spring](https://spring.io/)
 
 Front-end
-* [Bootstrap](https://getbootstrap.com/)
+* [Bootstrap](https://getbootstrap.com/) - CSS Theme Provider
 
 ## Installation and Running
 
 Before running the program your MySQL credentials should be entered into the db.properties
-
-Next start MySQL in a local command line and create the ims database using the command "CREATE DATABASE ims;"
 
 ## Testing
 
