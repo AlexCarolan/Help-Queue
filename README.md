@@ -39,7 +39,7 @@ Before running the program your MySQL credentials should be entered into the db.
 ![Lifecycle](images/lifecycle.png)
 
 ## Database Structure
-![Database](images/database.png)
+![Database](images/helptickets.png)
 
 ## Risk Assessment
 ![Risk Assesment](images/risk_assessment.PNG)
