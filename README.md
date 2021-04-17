@@ -33,8 +33,6 @@ Front-end
 
 Before running the program your MySQL credentials should be entered into the db.properties
 
-## Testing
-
 ## System Lifecycle
 ![Lifecycle](images/lifecycle.png)
 
