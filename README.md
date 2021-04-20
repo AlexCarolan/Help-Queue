@@ -26,7 +26,6 @@ Back-end
 * [H2](https://h2database.com) - Embedded DBMS for testing
 * [JDBC](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/) - Database Management via Java
 * [Spring](https://spring.io/) - API and Database Management
-* [JUnit4](https://junit.org/junit4/) - Unit Testing
 
 Front-end
 * [Bootstrap](https://getbootstrap.com/) - CSS Theme Provider
