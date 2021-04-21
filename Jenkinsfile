@@ -9,12 +9,12 @@ pipeline {
         stage('Build') {
             steps {
                 sh "mvn -version"
-                sh "cd source && mvn clean compile"
+                sh "cd source && mvn -B -DskipTests clean package"
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                sh "cd source && mvn test"
             }
         }
         stage('Deploy') {
