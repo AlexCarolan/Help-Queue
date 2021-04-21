@@ -10,7 +10,7 @@ pipeline {
             steps {
                 dir('/source') {
                     sh "mvn -version"
-                    sh "mvn clean compile"
+                    sh "cd /src && mvn clean compile"
                 }
             }
         }
