@@ -9,7 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh "mvn -version"
-                sh "cd /src && mvn clean compile"
+                sh "cd /source && mvn clean compile"
             }
         }
         stage('Test') {
