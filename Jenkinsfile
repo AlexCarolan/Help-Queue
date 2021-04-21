@@ -9,6 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh "mvn -version"
+                sh "cd source"
                 sh "mvn clean install"
             }
         }
