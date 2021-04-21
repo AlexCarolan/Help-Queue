@@ -9,8 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh "mvn -version"
-                sh "cd source"
-                sh "mvn clean install"
+                sh 'mvn -f source/pom.xml clean install'
             }
         }
         stage('Test') {
