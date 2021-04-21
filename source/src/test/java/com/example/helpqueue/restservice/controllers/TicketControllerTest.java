@@ -89,7 +89,7 @@ class TicketControllerTest {
                 .andExpect(jsonPath("$[1].description", Matchers.is("Unable to login")))
                 .andExpect(jsonPath("$[1].creator.id", Matchers.is(2)))
                 .andExpect(jsonPath("$[1].status", Matchers.is("CLOSED")))
-                .andExpect(jsonPath("$[1].created", Matchers.is("2020-05-06T11:00:00.000+00:00")));
+                .andExpect(jsonPath("$[1].created", Matchers.is("2020-05-06T12:00:00.000+00:00")));
     }
 
     @Test
