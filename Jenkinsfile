@@ -1,12 +1,14 @@
 pipeline {
     agent any
+    
+    tools {
+        maven "3.6.0"
+    }
 
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
-                echo 'Building..'
-                echo 'Building..'
+                sh "mvn -version"
             }
         }
         stage('Test') {
