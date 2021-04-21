@@ -8,10 +8,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                dir('/source') {
-                    sh "mvn -version"
-                    sh "cd /src && mvn clean compile"
-                }
+                sh "mvn -version"
+                sh "cd /src && mvn clean compile"
             }
         }
         stage('Test') {
