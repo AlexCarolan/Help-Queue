@@ -25,7 +25,7 @@ pipeline {
               steps{
                   dir("source") {
                     script {
-                        dockerImage = docker build . -t help-queue
+
                       }
                   }
              }
