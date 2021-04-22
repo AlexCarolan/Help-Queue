@@ -23,11 +23,7 @@ pipeline {
         }
         stage('Building image') {
               steps{
-                  dir("source") {
-                    script {
-
-                      }
-                  }
+                echo 'Deploying....'
              }
         }
         stage('Deploy') {
