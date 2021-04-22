@@ -6,7 +6,7 @@ pipeline {
     }
     
     environment {
-        imagename = "help-queue"
+        imagename = "/source/Dockerfile"
     }
 
     stages {
