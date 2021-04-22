@@ -6,7 +6,7 @@ pipeline {
     }
     
     environment {
-        imagename = "/source/Dockerfile"
+        imagename = "/source/dockerfile"
     }
 
     stages {
