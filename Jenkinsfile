@@ -6,7 +6,7 @@ pipeline {
     }
     
     environment {
-        imagename = "Help-Queue"
+        imagename = "help-queue"
     }
 
     stages {
