@@ -4,6 +4,10 @@ pipeline {
     tools {
         maven "3.6.3"
     }
+    
+    environment {
+        imagename = "Help-Queue"
+    }
 
     stages {
         stage('Build') {
