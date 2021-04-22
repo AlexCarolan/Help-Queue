@@ -17,6 +17,13 @@ pipeline {
                 sh "cd source && mvn test"
             }
         }
+        stage('Building image') {
+              steps{
+                script {
+                    dockerImage = docker.build imagename
+                  }
+             }
+        }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
