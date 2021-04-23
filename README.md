@@ -4,7 +4,9 @@
 
 ## Project Outline
 
-This repository contains both the front and back-end code of a program that provides a technical support queue. This project is a training exercise for full stack development and as such is not intended for actual use. Specifically, this exercise was used to improve my understanding of Java Spring API development and DevOps.
+This repository contains both the front and back-end code of a program that provides a technical support queue. This project is a training exercise for full stack development. Specifically, this exercise was used to improve my understanding of Java Spring API development and DevOps.
+
+The application allows users to report technical issues they are experiencing and enables admins to update support tickets with solutions.
 
 ## JIRA Board
 
@@ -23,7 +25,7 @@ https://id.atlassian.com/invite/p/jira-software?id=Jx0Zd3ecSHa_F1vp4H6L4w
 In addition to this the project uses the following dependencies 
 
 Back-end
-* [H2](https://h2database.com) - Embedded DBMS for testing
+* [H2](https://h2database.com) - Embedded DBMS for testing purposes
 * [JDBC](https://docs.oracle.com/javase/8/docs/technotes/guides/jdbc/) - Database Management via Java
 * [Spring](https://spring.io/) - API and Database Management
 
