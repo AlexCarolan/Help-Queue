@@ -1,19 +1,18 @@
 pipeline {
     agent any
-    def app 
     
     tools {
         maven "3.6.3"
     }
     
     environment {
-        imagename = ""
+        dockerImage = ""
     }
 
     stages {
         stage('Build') {
             steps {
-                app = docker.build("alexcarolan/help-queue")
+                dockerImage = docker.build("alexcarolan/help-queue")
             }
         }
         stage('Test') {
