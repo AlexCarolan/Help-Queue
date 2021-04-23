@@ -36,6 +36,9 @@ pipeline {
         stage('Deploy Image') {
             steps {
                 echo "deploy"
+		container('kubectl') {
+		    sh "kubectl get pods"
+	        }
             }
         }
     }
