@@ -23,7 +23,7 @@ pipeline {
                 sh "cd source && mvn test"
             }
         }
-        stage('Deploy') {
+        stage('Upload Image') {
             steps {
                 script {
                     docker.withRegistry( '', registryCredential ) {
@@ -32,6 +32,11 @@ pipeline {
 		    }
 	        }
 	    } 
+        }
+        stage('Deploy Image') {
+            steps {
+                echo "deploy"
+            }
         }
     }
 }
