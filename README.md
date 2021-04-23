@@ -32,7 +32,7 @@ Front-end
 
 ## Installation and Running
 
-Before running the program your MySQL credentials should be entered into the db.properties
+Before running the program your MySQL credentials should be entered into the db.properties for local use
 
 ## System Lifecycle
 ![Lifecycle](images/lifecycle.png)
