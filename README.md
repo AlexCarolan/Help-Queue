@@ -1,6 +1,6 @@
 # Help Queue
 
-![Screenshot](images/capture.PNG)
+![Screenshot](images/Capture.PNG)
 
 
 ## Project Outline
