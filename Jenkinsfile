@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Deploying....'
+                sh "cd source && mvn test"
             }
         }
         stage('Deploy') {
