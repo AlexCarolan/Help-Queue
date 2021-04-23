@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Deploying....'
+                app = docker.build("alexcarolan/help-queue")
             }
         }
         stage('Test') {
