@@ -117,4 +117,7 @@
 #returnButton{
     margin-right: 20px;
 }
+p {
+    white-space: pre-line;
+}
 
