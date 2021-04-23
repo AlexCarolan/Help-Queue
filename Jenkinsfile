@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    def app 
     
     tools {
         maven "3.6.3"
