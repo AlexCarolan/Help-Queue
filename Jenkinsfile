@@ -12,7 +12,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                dockerImage = docker.build("alexcarolan/help-queue")
+                script {
+                    dockerImage = docker.build("alexcarolan/help-queue")
+                }
             }
         }
         stage('Test') {
