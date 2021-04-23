@@ -7,7 +7,7 @@ pipeline {
     
     environment {
         dockerImage = ""
-        registryCredential = "alexcarolan-dockerhub"
+        registryCredential = "dockerhub_id"
     }
 
     stages {
