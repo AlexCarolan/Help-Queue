@@ -3,10 +3,6 @@
 ![Screenshot](images/Capture.PNG)
 
 
-**Video Demonstration**
-
-https://youtu.be/HkJ2yjpwWng
-
 
 ## Project Outline
 
@@ -49,8 +45,5 @@ Before running the program your MySQL credentials should be entered into the db.
 
 ## Database Structure
 ![Database](images/helptickets.png)
-
-## Risk Assessment
-![Risk Assesment](images/risk_assessment.PNG)
 
 
