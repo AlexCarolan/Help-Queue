@@ -1,6 +1,6 @@
 # Help Queue
 
-![Demo](Images/portfolio-4.gif)
+![Demo](images/portfolio-4.gif)
 
 
 
