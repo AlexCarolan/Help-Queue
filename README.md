@@ -12,14 +12,6 @@ The application allows users to report technical issues they are experiencing an
 
 Users are simplified to just a User-ID as maintaining a secure validation system with passwords was not in the scope of the project
 
-## JIRA Board
-
-The project managment board can be found at:
-
-https://id.atlassian.com/invite/p/jira-software?id=Jx0Zd3ecSHa_F1vp4H6L4w
-
-(Link may have expired)
-
 ## Requirements
 
 * Java 8+
